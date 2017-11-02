@@ -1,0 +1,26 @@
+How to install and use chef
+
+1======================================================
+Install Ruby
+https://rubyinstaller.org/downloads/
+
+2======================================================
+Install Chef Client in the workstation
+https://downloads.chef.io/chef
+
+3======================================================
+Setup Chef Server (chef-repo)
+https://manage.chef.io/organizations/<orgname>/getting_started
+Get and Starter Kit
+  kit will contain key and some cookbook
+  the kit will be for each oraganization
+  extract the zip file
+
+**verify if it running
+**all command must be run in chef-repo
+
+  check knife version --> knife --version
+  check the client list -->  knife client list    //likely to have only one client - chef server
+          organization-validator
+          
+4======================================================
