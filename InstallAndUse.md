@@ -2,18 +2,22 @@ How to install and use chef
 
 
 
-1======================================================
+Step 1 Install Ruby
+======================================================
 Install Ruby In the workstation
 https://rubyinstaller.org/downloads/
 
-2======================================================
+Step 2 Install workstation
+======================================================
 Install Chef Client in the workstation
 https://downloads.chef.io/chef
 
 Install Chef DK
 https://downloads.chef.io/chefdk
 
-3======================================================
+
+Step 3 Setup chef-server
+======================================================
 Setup Chef Server (chef-repo)
 
 Easy example
@@ -29,8 +33,10 @@ Get and Starter Kit
   check knife version --> knife --version
   check the client list -->  knife client list    //likely to have only one client - chef server
           organization-validator
-          
-4======================================================
+
+
+Step 4 Setup AWS
+======================================================
 Set AWS
 
 Set EC2 
@@ -38,7 +44,9 @@ Set EC2
 
 Confirm the access to AWS using ssh connection
 
-5=====================================================
+
+Step 5 What to know
+=====================================================
 Need to know from client
 SSH username
 SSH Pass
@@ -50,8 +58,8 @@ sudo in client
 
 
 
-6
-Bootstrap node using knife====================================
+Step 6 Bootstrap node using knife
+====================================
 
 This will link the chef-client(our target) to the chef-server.
 It create a connection from chef-server to chef-clinet
@@ -86,13 +94,16 @@ Can check by run in the client machine    Ex. --$ ohai
 It should return all the information in the JSON format
 
 
-7 ======================COOKBOOK================================
+Step 7 Start Cookbook
+======================
+COOKBOOK
+================================
 
 Cookbook  - package contain all recipes, files , templates and libraries
             to config a portion your infrastructure
           - likely to be 1:1 to a piece of software or functionality
 
-Probmel need to be solve-------------------------------------
+Probmel need to be solve  -------------------------------------
 Problem  : We need a web server configured to serve up our home page
 Goal     : We can see the homepage in a web browser.
 
@@ -101,7 +112,8 @@ Need to complete
 2. Start the service and make sure it will start when machine bootstrap
 3. Write out small homepage
 
-Create Cookbook --------------------------------
+Create Cookbook 
+--------------------------------
 
 Create cookbook(OLD not use)
   knife cookbook create <name of cookbook>
@@ -112,7 +124,8 @@ Create cookbook(New 12+)
   Ex. chef generate cookbook apacheBase
 
 
-Modify Recipes -------------------------------
+Modify Recipes 
+-------------------------------
 
 the code will execute in order
 In   chef-repo/apacheBase/recipes
@@ -132,7 +145,8 @@ end
 // notificaion = send notificaion to other resource
 
 
-Upload to cookbook server----------------------------------
+Upload to cookbook server
+----------------------------------
 
 move the cookbook into cookbooks folder (if nesseary)
 upload it by
@@ -141,7 +155,8 @@ knife cookbook upload <name>
 Ex. knife cookbook upload apacheBase
 
 
-Set a runlist-------------------------------------------------
+Set a runlist
+-------------------------------------------------
 
 runlist - specify the policy for each node
 
@@ -154,5 +169,6 @@ login to ssh to chef-client node
 run >    sudo chef-client
 it should perfom what specify in the cookbook
 
-Checking----------------------------------------
+Checking
+----------------------------------------
 check aws for the website
