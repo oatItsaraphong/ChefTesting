@@ -1,7 +1,9 @@
-#How chef work
+How chef work
+================================================
 
+
+What happend when Client Run
 ----------------------------------------------------------
-##What happend when Client Run
 
 Chef-Client -> 
 1. Build node - using ohai
@@ -14,8 +16,9 @@ Chef-Client ->
         - No - exception
 6. Noiftication handler - can do anything (module), if exception occure send email to operation team, or use a recording 
 
+
+Authentication
 ----------------------------------------------------------
-##Authentication
 
 Chef-server require keys:
 - client.pem - private key for API client
@@ -32,7 +35,7 @@ if __No__ And have validation.pem in /etc/chef/
 else
     Error 401
 
-###Create the new node
+Create the new node
 Assume the client(intend to be chef-client) node have no chef install
 
 1. When bootstrap with knife, it will store the validation.pem(organizaion key) into the client.
@@ -41,12 +44,15 @@ Assume the client(intend to be chef-client) node have no chef install
 After chef-client have the client.pem, it will use client.pem to sign any request to the chef-server
 
 
+
+Node
 ----------------------------------------------------------
-##Node
 
 
+
+Convergen
 ----------------------------------------------------------
-##Convergen
+
 To run the recipe the client will perform a convergence
 It is a two step process
     1. Complie
