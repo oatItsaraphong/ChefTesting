@@ -95,10 +95,12 @@ It should return all the information in the JSON format
 
 ###Specify the runlist 
 This will allow the machine to get bootstrap and have the runlist in one go
- -r   add recipe to the bootstrap process
+ -r   runlist added recipe to the bootstrap process
  Ex. -r "recipe[<recipename>]"
 
- knife boostrap ec2-12-12-12--12.computer1.amazonaws.com --sudo -x user -P pass -p 22 -N "nodenaem" -r "recipe[apt], recipe[apacheBase]" 
+ knife boostrap ec2-12-12-12--12.computer1.amazonaws.com --sudo -x user -P pass -p 22 -N "<nodename>" -r "recipe[apt], recipe[apacheBase]" 
+
+ **ec2-.........com is an external address
 
 
 Step 7 Start Cookbook

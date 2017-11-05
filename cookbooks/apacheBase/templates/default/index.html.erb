@@ -1,8 +1,9 @@
 <html>
 <body>
-    <h1>Hello from <%= node["fqdn"] %> ! </h1>
+    <h1>Welcome to <%= node["company"]%></h1>
+    <h2>Hello from <%= node["fqdn"] %> !</h2>
     <p>
-        This server has <%= node["memory"]["total"].to_i / 1024 %> MB memory
+        This server AWS has <%= node["memory"]["total"].to_i / 1024 %> MB memory
     </p>
 </body>    
 

@@ -83,6 +83,9 @@ output__
 
 Search the attribute in the node. "*:*" is solar query syntax format. "<key>:<value of a key>", __*__ = consider wildcard
 
+Can also run search in local node using ohai
+    $ ohai | grep fqdn
+
 
 More knife example:
 

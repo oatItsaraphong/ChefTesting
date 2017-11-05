@@ -9,19 +9,30 @@
 #           Put a file into the server
 
 
-package_name = "apache2"
-service_name = "apache2"
-document_root = "/var/www"
 
-if node["platform"] == "centos"
-    package_name = "httpd"
-    service_name = "httpd"
-    document_root = "/var/www/html"
-end
+#-----------------------------------
+#This get move to attributes/default.rb
+# to manage it easier
+#
+#package_name = "apache2"
+#service_name = "apache2"
+#document_root = "/var/www"
+
+#httpd == apache2 in CentOS
+#this is for CentOS and RedHat
+#if node["platform"] == "centos"
+#    package_name = "httpd"
+#    service_name = "httpd"
+#    document_root = "/var/www/html"
+#end
+#---------------------------------------
 
 #install apache
 # install apache
-package package_name do
+#package package_name do
+
+#this use the variale node["package_name"] from attributes/default.rb
+package node["package_name"] do
     action :install
 end
 #chef will take action if it require
@@ -31,7 +42,11 @@ end
 
 #Start the apache service
 #make sure the service start on reboot
-service service_name do
+
+#service service_name do
+
+#this use the variale node["service_name"] from attributes/default.rb
+service node["service_name"] do
     action [:enable, :start]
 end
 # :enable mean it will restart the servie on reboot
@@ -53,7 +68,10 @@ end
 
 #template allow to use erb file
 #   erb = embeded ruby
-template "#{document_root}/index.html" do
+#template "#{document_root}/index.html" do
+
+#this use the variale node["document_root"] from attributes/default.rb
+template "#{node["document_root"]}/index.html" do
     source "index.html.erb"
     mode "0644"
 end
