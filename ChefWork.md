@@ -49,7 +49,39 @@ After chef-client have the client.pem, it will use client.pem to sign any reques
 
 Node
 ----------------------------------------------------------
+Node - is any physical, virtual or cloud machines that is configured to be maintained by a chef.
 
+Node are made up of Attributes
+- Many are discoverd automatically (platform, ip, number of cpu)
+- Other object in Chef ca also add Node attribure(cookbooks, roles, environment, recipes)
+- Get attribute from __ohai__ Ex: sudo ohai | less
+
+
+
+Each node must have a unique name within an organization
+
+Chef will use the node name to derive the Fully Qualified Domain Name
+
+Command:
+
+    $ knife node list
+
+This will list all the nodes name that are under this organization
+
+    $ knife node show <node name>
+
+This will list the detail of the specific nodes name
+
+    $ knife node show <node name> <option>
+
+* -l    This will list the detail in long list form - __ohai 
+output__
+* -Fj   format as JSON  (F = format, j = JSON)
+* -a <attribute>    show a single attribue ex. -a fqdn
+
+    $ knife search node "*:*" -a fqdn
+
+Search the attribute in the node. "*:*" is solar query syntax format. "<key>:<value of a key>", __*__ = consider wildcard
 
 
 Convergen
