@@ -19,12 +19,12 @@ Show memory in MB format
 **.erb = embeded ruby
 
 Ex. :
-    <body>
+    
         <h1>Hello from <%= node["fqdn"] %> ! </h1>
         <p>
             This server AWS has <%= node["memory"]["total"].to_i / 1024 %> MB memory
         </p>
-    </body>    
+        
 
 Command related to __knife__:
 
