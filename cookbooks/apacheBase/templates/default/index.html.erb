@@ -1,0 +1,9 @@
+<html>
+<body>
+    <h1>Hello from <%= node["fqdn"] %> ! </h1>
+    <p>
+        This server has <%= node["memory"]["total"].to_i / 1024 %> MB memory
+    </p>
+</body>    
+
+</html>

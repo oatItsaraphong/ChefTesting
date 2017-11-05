@@ -98,7 +98,7 @@ This will allow the machine to get bootstrap and have the runlist in one go
  -r   add recipe to the bootstrap process
  Ex. -r "recipe[<recipename>]"
 
- knife boostrap ec2-12-12-12--12.computer1.amazonaws.com --sudo -x user -P pass -p 22 -N "nodenaem" -r "recipe[apt], recipe[apacheBase]"
+ knife boostrap ec2-12-12-12--12.computer1.amazonaws.com --sudo -x user -P pass -p 22 -N "nodenaem" -r "recipe[apt], recipe[apacheBase]" 
 
 
 Step 7 Start Cookbook

@@ -84,6 +84,22 @@ output__
 Search the attribute in the node. "*:*" is solar query syntax format. "<key>:<value of a key>", __*__ = consider wildcard
 
 
+More knife example:
+
+    $ knife node show <nodename> -a memory
+
+    $ knife node show <nodename> -a memory.total
+
+-a memory will show all field under memory
+-a memory.total will show total field in memory attribute
+
+In html use ex index.html.erb:
+
+    <%= node["memory"]["total"].to_i / 1024 %>
+
+Show memory in MB format
+**.erb = embeded ruby
+
 Convergen
 ----------------------------------------------------------
 
