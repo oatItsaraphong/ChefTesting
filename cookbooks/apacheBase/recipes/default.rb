@@ -4,6 +4,10 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
+# Purpose:  To install apache2 
+#           Apache must start on reboot
+#           Put a file into the server
+
 #install apache
 # install apache
 package "apache2" do

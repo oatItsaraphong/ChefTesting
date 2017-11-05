@@ -74,7 +74,7 @@ in chef-ropo
 * help 
 knife bootstrap --help
 
-knife boostrap FQDN (option)   //FQDN fully qualify domain name
+##knife boostrap FQDN (option)   //FQDN fully qualify domain name
                                // and actual chef-cli address
   --sudo
   -x SSH_user
@@ -92,6 +92,13 @@ All requirement will be install into client such as Ruby, chef-client , ohai and
 
 Can check by run in the client machine    Ex. --$ ohai
 It should return all the information in the JSON format
+
+###Specify the runlist 
+This will allow the machine to get bootstrap and have the runlist in one go
+ -r   add recipe to the bootstrap process
+ Ex. -r "recipe[<recipename>]"
+
+ knife boostrap ec2-12-12-12--12.computer1.amazonaws.com --sudo -x user -P pass -p 22 -N "nodenaem" -r "recipe[apt], recipe[apacheBase]"
 
 
 Step 7 Start Cookbook
@@ -172,3 +179,12 @@ it should perfom what specify in the cookbook
 Checking
 ----------------------------------------
 check aws for the website
+
+
+
+IMPORTANT
+============================================
+1. Order of the Runlist matter - it will execute the first recipe first 
+    The order can be order in the runlist 
+
+2. The code will execute from top to bottom in order
