@@ -9,3 +9,7 @@ when "centos"
     default["service_name"] = "httpd"
     default["document_root"] = "/var/www/html"
 end
+
+#node['platform_family'] can also be use to specify the type of os
+# when "debian"  #include (ubuntu, debien)
+# when "rhel"    #include (rhel(red hat enterprise linux), CentOS, amazon, scientific)

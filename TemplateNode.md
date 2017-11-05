@@ -37,7 +37,7 @@ Command related to __knife__:
 
 Attribute Management
 ------------------------
-
+Seperate any varible use in the template or recipe into an attributes. It will made the code to be cleaner and easier to manage.
 
 
 Create a new Attribute for the node
