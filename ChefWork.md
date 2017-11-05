@@ -28,10 +28,12 @@ chef-client have client.pem in /etc/chef/
 
 if __Yes__ 
     use client.pem to sign the request
+
 if __No__ And have validation.pem in /etc/chef/
     Client request API client key from server
     Server will generate and send client.pem
     Use client.pem to sign the request
+
 else
     Error 401
 
