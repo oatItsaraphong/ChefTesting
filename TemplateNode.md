@@ -62,6 +62,10 @@ This introduce a dependency problem where __apacheBase__ is __my-company__ so we
 
 In cookbooks/apacheBase/metadata.rb add   __depends 'my-company'__  __Warning: This is a bad way to solve this problem.__ If you add the cookbook as a dependency then you do not need to add the dependency to the runlist. Ex. apacheBase will be in the runlist but my-company will not. Chef-client will be about to use anything in my-company without my-compnay in the run list.
 
+The best way to add dependency is to use __role__ to specify the runlists
+
+__Version number can be change in the metadata.rb__
+
 
 File Location
 -----------------------
