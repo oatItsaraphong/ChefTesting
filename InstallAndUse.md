@@ -37,7 +37,8 @@ Get and Starter Kit
 
 Step 4 Setup AWS
 ======================================================
-Set AWS
+Set AWS > community AMI
+  oc-training-public
 
 Set EC2 
   set Security Group - add TCP (ssh, http, https, custom tcp port 81-90)
@@ -51,7 +52,9 @@ Need to know from client
 SSH username
 SSH Pass
 SSH port
-IP address
+
+IP address 
+(Public DNS for AWS,  chef-server will redirect itself and use the internal ip automatically)
 
 sudo in client
 
@@ -181,6 +184,9 @@ it should perfom what specify in the cookbook
 Checking
 ----------------------------------------
 check aws for the website
+
+** recipe[apache::default] == recipe[apache]. If there are more than one recipe in the cookbook we can sepecify by recipe[apache::addOtherWeb]
+
 
 
 

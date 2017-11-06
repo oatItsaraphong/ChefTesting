@@ -81,6 +81,8 @@ Environment allow for isolating resources within a single organization.
 Organization - do not share any cookbook 
 Environment - allow to share a cookbook
 
+**__If you add an environment in to the node does not mean the roles and recipes will also be set to the node.__ You need to apply the roles/recipes seperately from the environment. Environment just specify what setting it will run on or what version it will run. 
+
 
 Create Environment
 ---------------------------
@@ -97,3 +99,10 @@ __cookbook__ allow to do the version control. We can chage the version in the co
 
 Upload cookbook
 ---------------------------
+Upload cookbook
+
+    $ knife environment from file <env>.rb
+
+    $ knife environment from file dev.rb
+
+The Environment can be change using a web interface.
